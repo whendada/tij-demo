@@ -4,12 +4,12 @@ public class LiftOff implements Runnable{
 
     protected int countDown = 10;
     private static int taskCount = 0;
-    private final int id = 0;
+    private final int id = taskCount++;
 
     public LiftOff() {}
 
     public String status() {
-        return "#" + Thread.currentThread() + "(" + (countDown > 0 ? countDown : "LiftOff!") + "),";
+        return "#" + id + "(" + (countDown > 0 ? countDown : "LiftOff!") + "),";
     }
 
 
