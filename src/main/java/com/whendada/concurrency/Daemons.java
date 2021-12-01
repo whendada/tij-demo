@@ -9,6 +9,6 @@ public class Daemons {
         t.setDaemon(true);
         t.start();
         System.out.println("t.isDaemon() = " + t.isDaemon() + ", ");
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(1);
     }
 }
