@@ -25,10 +25,19 @@ public class EvenChecker implements Runnable {
         }
     }
 
-    public static void main(String[] args) {
+    public static void test(IntGenerator generator, int count) {
         ExecutorService exec = Executors.newCachedThreadPool();
-        for (int i = 0; i < c; i++) {
-
+        for (int i = 0; i < count; i++) {
+            exec.execute(new EvenChecker(generator, i));
         }
+        exec.shutdown();
+    }
+
+    public static void test() {
+        test();
+    }
+
+    public static void main(String[] args) {
+
     }
 }
